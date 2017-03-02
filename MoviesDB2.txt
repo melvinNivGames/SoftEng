@@ -1,0 +1,37 @@
+drop db moviesDB;
+create db moviesDB;
+connect to moviesDB;
+
+drop table users;
+drop table movies;
+
+
+-- create users table...
+create table users
+(
+  name  varchar(18),
+  password varchar(18),
+  rights varchar(1)
+);
+
+-- create movies table...
+create table movies
+(
+  title varchar(64),
+  genre varchar(24),
+  duration integer
+);
+
+INSERT INTO users VALUES ('admin', 'admin', 'T');
+INSERT INTO users VALUES ('user1', 'user1', 'F');
+INSERT INTO users VALUES ('user2', 'user2', 'F');
+INSERT INTO users VALUES ('user3', 'user3', 'F');
+INSERT INTO users VALUES ('user4', 'user4', 'F');
+
+INSERT INTO movies VALUES ('Deadpool', 'Action', 120);
+INSERT INTO movies VALUES ('Frozen', 'Adventure', 130);
+INSERT INTO movies VALUES ('Fifty Shades of Grey', 'Romance', 180);
+INSERT INTO movies VALUES ('Titanic', 'Drama', 150);
+INSERT INTO movies VALUES ('Kingsglaive', 'Action', 140);
+
+commit;
